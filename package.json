@@ -36,6 +36,7 @@
     },
     "scripts": {
         "build": "tsup --format esm --dts",
+        "prepare": "npm run build",
         "dev": "tsup --format esm --dts --watch",
         "test": "vitest run",
         "test:coverage": "vitest run --coverage"
