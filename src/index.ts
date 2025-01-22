@@ -81,9 +81,10 @@ export class TwitterClientInterface implements Client {
   }
 
   async stop(_runtime: IAgentRuntime) {
-    elizaLogger.warn("Twitter client does not support stopping yet");
-    this.manager.post.stop();
-    this.manager.interaction.stop();
+    elizaLogger.log("Stopping Twitter client");
+    await this.manager.post.stop();
+    await this.manager.interaction.stop();
+    await this.manager.client.stop();
   }
 }
 

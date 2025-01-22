@@ -156,6 +156,10 @@ export class ClientBase extends EventEmitter {
             this.runtime.character.style.post.join();
     }
 
+    async stop() {
+        await this.twitterClient.logout();
+    }
+
     async init() {
         const username = this.twitterConfig.TWITTER_USERNAME;
         const password = this.twitterConfig.TWITTER_PASSWORD;
